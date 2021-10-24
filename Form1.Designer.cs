@@ -35,12 +35,15 @@ namespace performance_counter
             this.pbCpu = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lMem2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lMem = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lMem2 = new System.Windows.Forms.Label();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.lStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -92,6 +95,24 @@ namespace performance_counter
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Memory";
             // 
+            // lMem2
+            // 
+            this.lMem2.AutoSize = true;
+            this.lMem2.Location = new System.Drawing.Point(71, 34);
+            this.lMem2.Name = "lMem2";
+            this.lMem2.Size = new System.Drawing.Size(44, 15);
+            this.lMem2.TabIndex = 4;
+            this.lMem2.Text = "lMem2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 15);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "In Use: ";
+            // 
             // lMem
             // 
             this.lMem.AutoSize = true;
@@ -110,29 +131,29 @@ namespace performance_counter
             this.label2.TabIndex = 2;
             this.label2.Text = "Available:";
             // 
-            // label3
+            // statusStrip
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "In Use: ";
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lStatus});
+            this.statusStrip.Location = new System.Drawing.Point(0, 148);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(238, 22);
+            this.statusStrip.SizingGrip = false;
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "statusStrip1";
             // 
-            // lMem2
+            // lStatus
             // 
-            this.lMem2.AutoSize = true;
-            this.lMem2.Location = new System.Drawing.Point(71, 34);
-            this.lMem2.Name = "lMem2";
-            this.lMem2.Size = new System.Drawing.Size(44, 15);
-            this.lMem2.TabIndex = 4;
-            this.lMem2.Text = "lMem2";
+            this.lStatus.Name = "lStatus";
+            this.lStatus.Size = new System.Drawing.Size(42, 17);
+            this.lStatus.Text = "lStatus";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(238, 145);
+            this.ClientSize = new System.Drawing.Size(238, 170);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -141,12 +162,16 @@ namespace performance_counter
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Performance counter";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -161,6 +186,8 @@ namespace performance_counter
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lMem2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel lStatus;
     }
 }
 

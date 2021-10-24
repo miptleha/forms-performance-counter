@@ -35,15 +35,27 @@ namespace performance_counter
             timer.Enabled = true;
         }
 
+        double total = 0;
+
         private void Timer_Tick(object sender, EventArgs e)
         {
+            var sw = Stopwatch.StartNew();
+
             int cpu = (int)Math.Round((decimal)pcCpu.NextValue());
+            float mem = pcMem.NextValue();
+            int mem2 = (int)Math.Round((decimal)pcMem2.NextValue());
+            
+            sw.Stop();
+
             lCpu.Text = $"{cpu} %";
             pbCpu.Value = cpu;
-            
-            lMem.Text = $"{pcMem.NextValue()} MBytes";
-            int mem2 = (int)Math.Round((decimal)pcMem2.NextValue());
+
+            lMem.Text = $"{mem} MBytes";
             lMem2.Text = $"{mem2}%";
+
+            double ms = sw.Elapsed.TotalMilliseconds;
+            total += ms;
+            lStatus.Text = $"Done in {ms.ToString("0.###")} ms. Total: {total.ToString("0.###")} ms";
         }
     }
 }
